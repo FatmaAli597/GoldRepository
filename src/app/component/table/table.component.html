@@ -1,0 +1,313 @@
+
+<br>
+
+  <ng-container *ngFor="let it of itemP.items">
+<table style="text-align:center "  class="table table-success table-striped table-havor table-bordered  caption-top">
+  
+  <thead class="thead-dark  " >
+    <tr>
+      <td colspan="6">
+       <h2>قناة جواهرجية مصر الشاملة </h2> </td>
+    </tr>
+      <tr>
+        <th colspan="2" > الساعة {{CurrentTime}}   	</th>
+        <th scope="col">سعر الدولار</th>
+        
+        <th scope="col">البورصة </th>
+        <th colspan="2"> التاريخ  {{CurrentDate}}    </th>
+      
+      </tr>
+    </thead>
+    <tbody >
+      <tr >
+      
+        <td colspan="2"></td>
+        <td>{{items.rates.EGP |currency:'EGP' }}</td>
+        
+        <td >
+          {{it.xauPrice}}
+        </td>
+      <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td>السوق</td>
+        <td>عيار 24</td>
+        <td>عيار 22 </td>
+        <td>عيار 21</td>
+        <td>عيار 18 </td>
+        <td>عيار 14 </td>
+      </tr>
+      <tr>
+        <td>شراء</td> 
+        <td>{{((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21 |currency:'EGP'}}</td>
+        <td> {{((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21 |currency:'EGP'}} </td>
+       <td> {{((items.rates.EGP * it.xauPrice)/35.346)-10 |currency:'EGP'}} </td>
+      
+       
+  <td>{{((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21 |currency:'EGP'}}</td>
+  <td>{{((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21 |currency:'EGP'}}</td>
+
+     </tr>
+     <tr>
+      <td>بيع </td>  
+      <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)-5 |currency:'EGP'}}</td>
+      <td> {{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/22)-5 |currency:'EGP'}}
+      </td>
+      <td> 
+      {{(((items.rates.EGP * it.xauPrice)/35.346)-10)-5 |currency:'EGP'}}
+     </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/22)-5 |currency:'EGP'}}</td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/22)-5 |currency:'EGP'}}</td>
+
+   </tr>
+   <tr>
+    <td>  خصم 1% </td>
+    <td>{{((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)-5)-(((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)-5)*0.01) |currency:'EGP'}}</td>
+    <td> {{((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)-5)-(((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)-5)*0.01) |currency:'EGP'}}
+    </td>
+   
+    <td> 
+     {{((((items.rates.EGP * it.xauPrice)/35.346)-10)-5)-(((((items.rates.EGP * it.xauPrice)/35.346)-10)-5)*0.01)  |currency:'EGP'}}
+   </td>
+  
+   <td>{{((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)-5)-(((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)-5)*0.01) |currency:'EGP'}}</td>
+   <td>{{((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)-5)-(((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)-5)*0.01) |currency:'EGP'}}</td>
+
+  </tr>
+ <tr>
+  <td>  خصم 2% </td> 
+  <td>{{((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)-5)-(((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)-5)*0.02) |currency:'EGP'}}</td>
+  <td>  {{((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)-5)-(((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)-5)*0.02) |currency:'EGP'}}
+  </td>
+  <td>  {{((((items.rates.EGP * it.xauPrice)/35.346)-10)-5)-(((((items.rates.EGP * it.xauPrice)/35.346)-10)-5)*0.02)  |currency:'EGP'}}
+ </td>
+ 
+
+ <td>{{((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)-5)-(((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)-5)*0.02) |currency:'EGP'}}</td>
+ <td>{{((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)-5)-(((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)-5)*0.02) |currency:'EGP'}}</td>
+
+</tr>
+
+<tr>
+  <th>النسبة	  </th>
+  
+  <th>24بالمصنعية   </th>
+  <th>21بالمصنعية   </th>
+  
+  <th>22بالمصنعية   </th>
+  <th>18بالمصنعية   </th>
+  <th>14بالمصنعية   </th>
+
+</tr>
+<tr>
+  <td>5%</td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.05) |currency:'EGP'}}</td>
+  <td>
+    {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.05) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.05) |currency:'EGP'}}</td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.05) |currency:'EGP'}}</td>
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.05) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>6%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.06) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.06) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.06) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.06) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.06) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>7%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.07) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.07) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.07) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.07) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.07) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>8%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.08) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.08) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.08) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.08) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.08) |currency:'EGP'}}</td>
+</tr>
+  
+<tr>
+  <td>9%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.09) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.09) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.09) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.09) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.09) |currency:'EGP'}}</td>
+</tr>
+  
+<tr>
+  <td>10%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.1) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.1) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.1) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.1) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.1) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>11%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.11) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.11) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.11) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.11) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.11) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>12%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.12) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.12) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.12) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.12) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.12) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>13%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.13) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.13) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.13) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.13) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.13) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>14%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.14) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.14) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.14) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.14) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.14) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>15%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.15) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.15) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.15) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.15) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.15) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>16%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.16) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.16) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.16) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.16) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.16) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>17%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.18) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.18) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.18) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.18) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.18) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>18%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.18) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.18) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.18) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.18) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.18) |currency:'EGP'}}</td>
+</tr>
+<tr>
+  <td>19%</td>
+
+<td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.19) |currency:'EGP'}}
+</td> 
+ <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.19) |currency:'EGP'}} 
+  </td>
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.19) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.19) |currency:'EGP'}}</td>
+
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.19) |currency:'EGP'}}</td>
+</tr>
+  <tr>
+    <td>20%</td>
+  
+  <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*24)/21)*0.2) |currency:'EGP'}}
+  </td> 
+   <td> {{(((items.rates.EGP * it.xauPrice)/35.346)-10)+((((items.rates.EGP * it.xauPrice)/35.346)-10)*0.2) |currency:'EGP'}} 
+    </td>
+    <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*22)/21)*0.2) |currency:'EGP'}}</td>
+  
+    <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*18)/21)*0.2) |currency:'EGP'}}</td>
+  
+    <td>{{(((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)+((((((items.rates.EGP * it.xauPrice)/35.346)-10)*14)/21)*0.2) |currency:'EGP'}}</td>
+  </tr>
+
+</tbody>
+    </table>
+  </ng-container>
+  
